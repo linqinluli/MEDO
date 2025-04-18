@@ -2,15 +2,15 @@
 
 This is the simulation code for MEDO and other swap algorithms. We inplement algorithms including MEDO, V6d, Linux, LinuxParallel, MGLRU.
 
-MEDO
+MEDO: The algorithm proposed by us. It is the subsystem of cloud memory pool. MEDO manges the data offloading of the memory node in the memory pool.
 
-V6d
+V6d: Vienyard. An in-memory data sharing system. We implement V6d's data spill algorithm. It is a single-LRU object-based algorithm.
 
-Linux
+Linux: The old Linux swap mechanism. It is a single-LRU page-based algorithm.
 
-LinuxParallel
+LinuxParallel: The parallel version of Linux swap mechanism. We implement the Linux swap with parallel data swap in and out for comparison. It is a single-LRU page-based algorithm.
 
-MGLRU
+MGLRU: The newest Linux swap mechanism. It is a multi-LRU page-based algorithm.
 
 ## Directory Structure
 ```
