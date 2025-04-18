@@ -2,15 +2,15 @@
 
 This is the simulation code for MEDO and other swap algorithms. We inplement algorithms including MEDO, V6d, Linux, LinuxParallel, MGLRU.
 
-MEDO: The algorithm proposed by us. It is the subsystem of cloud memory pool. MEDO manges the data offloading of the memory node in the memory pool.
+**MEDO**: The algorithm proposed by us. It is the subsystem of cloud memory pool. MEDO manges the data offloading of the memory node in the memory pool.
 
-V6d: Vienyard. An in-memory data sharing system. We implement V6d's data spill algorithm. It is a single-LRU object-based algorithm.
+**V6d** ([Vineyard](https://v6d.io/)): Vienyard. An in-memory data sharing system. We implement V6d's data spill algorithm. It is a single-LRU object-based algorithm.
 
-Linux: The old Linux swap mechanism. It is a single-LRU page-based algorithm.
+**Linux** ([Linux swap](https://docs.kernel.org/mm/swap.html)): The old Linux swap mechanism. It is a single-LRU page-based algorithm.
 
-LinuxParallel: The parallel version of Linux swap mechanism. We implement the Linux swap with parallel data swap in and out for comparison. It is a single-LRU page-based algorithm.
+**LinuxParallel**: The parallel version of Linux swap mechanism. We implement the Linux swap with parallel data swap in and out for comparison. It is a single-LRU page-based algorithm.
 
-MGLRU: The newest Linux swap mechanism. It is a multi-LRU page-based algorithm.
+**MGLRU** ([Linux MGLRU](https://docs.kernel.org/admin-guide/mm/multigen_lru.html)): The newest Linux swap mechanism. It is a multi-LRU page-based algorithm.
 
 ## Directory Structure
 ```
@@ -27,8 +27,9 @@ MGLRU: The newest Linux swap mechanism. It is a multi-LRU page-based algorithm.
 ```
 
 ## Requirements
+```
 pip install -r requirements.txt
-
+```
 ## Running the code
 To run the code, simply run the following command in the terminal:
 
