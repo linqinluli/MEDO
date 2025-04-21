@@ -1,4 +1,4 @@
-from simulator import run_real_sim, run_random_sim
+from simulator import run_sim
 import sys
 
 if __name__ == '__main__':
@@ -13,11 +13,6 @@ if __name__ == '__main__':
             if cache not in ['MEDO', 'V6d', 'Linux', 'LinuxParallel', 'MGLRU']:
                 print("Invalid cache name: ", cache)
                 sys.exit(1)
-    if sys.argv[4] not in ['FRD', 'random']:
-        print("Invalid simulation type: ", sys.argv[4])
-        sys.exit(1)
-    if sys.argv[4] == 'random':
-        run_random_sim(local_memory_size, high_limit_ratio, low_limit_ratio, cachelist)
-    else:
-        run_real_sim(local_memory_size, high_limit_ratio, low_limit_ratio, cachelist)
+    dataset = sys.argv[4]
+    run_sim(local_memory_size, high_limit_ratio, low_limit_ratio, dataset, cachelist)
 

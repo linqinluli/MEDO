@@ -30,10 +30,25 @@ This is the simulation code for MEDO and other swap algorithms. We inplement alg
 ```
 pip install -r requirements.txt
 ```
+## Datasets
+We provide two datasets: FRD and random.
+
+**FRD**: The dataset used in the paper. It is the data access trace of a fraud risk detection system task.
+
+**Random**: A random dataset generated whose features are aligned with the features described in the paper.
+
+You can generate your own dataset. It should follow the format described below:
+1. The head of the dataset should be: `key,value,type,operation`
+2. Key is unique for each data object.
+3. Value is the size of the data object in GB.
+4. Type is the type of the data object. -1 means MED, 0 means LED, 1 means IED (MED, LED, IED are described in the paper).
+5. Operation is the operation performed on the data object. 0 means put, 1 means get.
+6. Objects cannot be got before they are put.
+
 ## Running the code
 To run the code, simply run the following command in the terminal:
 
-Cache simulator:
+**Cache simulator:**
 ```
 python cache_sim.py $local_memory_size $high_limit_ratio $low_limit_ratio $dataset $algorithms
 ```
@@ -43,7 +58,7 @@ python cache_sim.py $local_memory_size $high_limit_ratio $low_limit_ratio $datas
 
 -- low_limit_ratio: the ratio of lowest memory in local memory affter data offloading. less than 1.0. e.g. 0.2
 
--- dataset: the dataset to use. supported datasets: random, FRD
+-- dataset: the dataset to use. supported datasets: random, FRD. Input the csv file path of your dataset if you want to use your own dataset. e.g. data/traces/test.csv
 
 -- algorithms: the algorithms to use. supported algorithms: MEDO, V6d, Linux, LinuxParallel, MGLRU. all means simulate all algorithms. e.g. MEDO,V6d,Linux,LinuxParallel,MGLRU
 
@@ -63,9 +78,12 @@ Simulate all algorithms on random dataset with local memory size 256 and high-lo
 python cache_sim.py 256 0.7 0.3 random all
 ```
 
+Simulate all algorithms on provided dataset with local memory size 256 and high-low priority ratio 0.7-0.3:
+```
+python cache_sim.py 256 0.7 0.3 data/traces/test.csv all
+```
 
-
-Cluster simulator:
+**Cluster simulator:**
 ```
 python cluster_sim.py $memory_begin $itnumm $itstep
 ```
