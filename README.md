@@ -1,4 +1,4 @@
-# MEDO
+# MEDO [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15253482.svg)](https://doi.org/10.5281/zenodo.15253482)
 
 This is the simulation code for MEDO and other swap algorithms. We inplement algorithms including MEDO, V6d, Linux, LinuxParallel, MGLRU.
 
